@@ -1,7 +1,7 @@
 var xBall = Math.floor(Math.random() * 300) + 50;
 var yBall = 300;
-var xSpeed = (2, 7);
-var ySpeed = (-7, -2);
+var xSpeed = (8, 3);
+var ySpeed = (-8, -3);
 var Player1Score = 0
 var Player2Score = 0
 var a = 65
@@ -79,12 +79,16 @@ function bounce() {
   if (yBall > 585) {
     Player2Score++;
     yBall = 300;
-    xBall = 250
+    xBall = 250;
+    xSpeed = (8, 3);
+    ySpeed = (-8, -3);
   }
     if (yBall < 10) {
     Player1Score++;
     yBall = 300;
     xBall = 250;
+    xSpeed = (-8, -3);
+    ySpeed = (8, 3);
   }
 }
 
@@ -107,8 +111,8 @@ function paddle() {
   if ((xBall > Paddle1X &&
       xBall < Paddle1X + 90) &&
     (yBall + 10 >= 575)) {
-    xSpeed *= 1 || -1;
-    ySpeed *= -1;
+    xSpeed *= 1.1;
+    ySpeed *= -1.1;
 
   }
 }
@@ -118,8 +122,8 @@ function paddle2() {
   if ((xBall > Paddle2X &&
       xBall < Paddle2X + 90) &&
     (yBall - 10 <= 20)) {
-    xSpeed *= 1|| -1;
-    ySpeed *= -1;
+    xSpeed *= 1.1;
+    ySpeed *= -1.1;
 
   }
 }
